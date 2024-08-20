@@ -1,10 +1,22 @@
-export function Header() {
+import React from 'react';
+import { CIcon } from '@coreui/icons-react';
+import { cilSun, cilMoon, cilSearch } from '@coreui/icons';
+import '../App.css';
+
+export function Header({ handleDark }) {
+    
+    let dark = document.documentElement.getAttribute('data-theme') === 'dark'; 
+    
     return (
-        <nav style={{ width: '44%', justifyContent: 'space-between', display: 'flex', padding: 4, alignItems: 'center', marginLeft: 'auto', marginRight: 'auto' }}>
-            <a style={{ color: 'black', fontSize: 24, padding: 4, fontWeight: 'bold' }}>guilhermewestphall.com</a>
-            <div style={{ padding: 4, flexDirection: 'row', justifyContent: 'flex-end' }}>
-                <a style={{ margin: 6 }}>search icon</a>
-                <a style={{ margin: 6 }}>theme icon</a>
+        <nav className='header' >
+            <a style={{ fontSize: 25, padding: 4, fontWeight: 'bold' }}>guilhermewestphall.com</a>
+            <div className='div-header' >
+                <button>
+                    <CIcon icon={cilSearch} size='sm' height={24} style={{ alignSelf: "center" }} />
+                </button>
+                <button onClick={handleDark}>
+                    <CIcon icon={dark ? cilMoon : cilSun} size='sm' height={24} style={{ alignSelf: "center" }} />
+                </button>
             </div>
         </nav>
     );

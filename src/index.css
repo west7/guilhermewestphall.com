@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+}
+
+:root {
+    --bg-color: #f0f0f0;
+    --color-primary: #6A26C9;
+    /* #6A26C9 ,#8400DC, #00E5E8, #FF2B17 */
+    --color-prymary-dark: #441a80;
+    --secondary-color: #171717;
+}
+
+[data-theme="dark"] {
+    --bg-color: #171717;
+    --color-primary: red;
+    --secondary-color: #f0f0f0;
+}
+
+body {
+    background-color: var(--bg-color); 
+    color: var(--secondary-color);
+}
+
+body,
+.App,
+.header,
+.header button,
+.footer,
+ul {
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-prymary-dark);
+}
+
+
+
+/* .space-mono-regular {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.space-mono-bold {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.space-mono-regular-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.space-mono-bold-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+} */
