@@ -1,5 +1,5 @@
-import { cibGithub } from '@coreui/icons';
-import { CIcon } from '@coreui/icons-react';
+import { FiGithub } from "react-icons/fi";
+import { TbBrandLinkedin } from "react-icons/tb";
 import '../App.css';
 
 export function Footer() {
@@ -7,10 +7,12 @@ export function Footer() {
         <footer className='footer'>
             Some text
             <div>
-                <a style={{ fontSize: 16, padding: 4 }}>
-                    <CIcon icon={cibGithub} size='sm' height={22}  />
-                </a>
-                <a style={{ fontSize: 16, padding: 4 }}>linkedin logo</a>
+                <button className="icon" >
+                    <FiGithub size={26} />
+                </button>
+                <button className="icon" >
+                    <TbBrandLinkedin size={26} />
+                </button>
             </div>
         </footer>
     );

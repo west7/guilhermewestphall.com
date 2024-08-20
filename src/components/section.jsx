@@ -3,7 +3,7 @@ import "../App.css"
 
 export function Section(props) {
     return (
-        <div style={{flex: 1,  padding: 8, marginLeft: 'auto', marginRight: 'auto', width: '44%' }}>
+        <div className="section">
             <h2>{props.title}</h2>
             <ul style={{listStyle: 'none', paddingLeft: 0, fontSize: 18}}>
                 <li>{props.title} 1</li>
