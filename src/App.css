@@ -8,15 +8,23 @@
 }
 
 .header {
-    width: 44%;
-    justify-content: space-between;
-    display: flex;
-    padding: 8px;
-    align-items: center;
+    width: 100%;
+    max-width: 44%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 35px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
     margin-top: 25px;
+}
+
+.header-title {
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--secondary-color);
 }
 
 .icon {
@@ -40,10 +48,13 @@
 
 .section {
     flex: 1;
+    display: flex;
     padding: 8px;
     margin-left: auto;
     margin-right: auto;
-    width: 44%;
+    width: 100%;
+    max-width: 44%;
+    flex-direction: column;
 }
 
 .section h2 {
@@ -55,6 +66,19 @@
     font-size: 20px;
     padding-bottom: 10px;
     font-weight: 700;
+    margin-left: 0px;
+}
+
+.section li:hover {
+    color: var(--color-primary);
+    text-decoration: underline dashed;
+    cursor: pointer;
+}
+
+.section ul {
+    color: var(--color-primary);
+    list-style-type: none;
+    padding-inline-start: 0%;
 }
 
 .div-header {
@@ -64,16 +88,19 @@
 }
 
 .footer {
-    width: 44%;
+    width: 100%;
+    max-width: 44%;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: space-between;
     padding: 8px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 50px;
-    margin-top: 65px;
-}
-
-ul {
-    color: var(--color-primary);
+    margin-bottom: 0;
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }

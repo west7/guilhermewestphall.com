@@ -9,14 +9,22 @@ export function Header({ handleDark }) {
     
     return (
         <nav className='header' >
-            <a style={{ fontSize: 25, padding: 4, fontWeight: 'bold' }}>guilhermewestphall.com</a>
+            <a className='header-title' href='/'>guilhermewestphall.com</a>
             <div className='div-header' >
-                <button className='icon'>
-                    <IoSearch size={24} />
-                </button>
-                <button className='icon' onClick={handleDark}>
-                    {dark ? <FiMoon size={24}/> : <FiSun size={24} />}
-                </button>
+                {window.innerWidth < 1050 ? (
+                    <button className='icon'>
+                        Mostrar mais
+                    </button>
+                ) : (
+                    <>
+                        <button className='icon'>
+                            <IoSearch size={24} />
+                        </button>
+                        <button className='icon' onClick={handleDark}>
+                            {dark ? <FiMoon size={24}/> : <FiSun size={24} />}
+                        </button>
+                    </>
+                )}
             </div>
         </nav>
     );

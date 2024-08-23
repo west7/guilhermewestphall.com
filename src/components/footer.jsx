@@ -7,10 +7,10 @@ export function Footer() {
         <footer className='footer'>
             Some text
             <div>
-                <button className="icon" >
+                <button className="icon" style={{padding: 0}}>
                     <FiGithub size={26} />
                 </button>
-                <button className="icon" >
+                <button className="icon" style={{padding: 0}}>
                     <TbBrandLinkedin size={26} />
                 </button>
             </div>
