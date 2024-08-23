@@ -4,32 +4,34 @@
 }
 
 :root {
-    --bg-color: #f0f0f0;
+    --bg-color: #fff;
     --color-primary: #6A26C9;
-    /* #6A26C9 ,#8400DC, #00E5E8, #FF2B17 */
-    --color-prymary-dark: #441a80;
+    --color-primary-dark: #441a80;
+    --color-primary-light: #8c00ff;
     --secondary-color: #171717;
 }
 
-[data-theme="dark"] {
+:root[data-theme="dark"] { 
     --bg-color: #0f0f0f;
-    --color-primary: #00E5E8;
     --secondary-color: #f0f0f0;
+    --color-primary: #6A26C9;
+    --color-primary-dark: #441a80;
+    --color-primary-light: #8c00ff;
 }
 
 body {
-    background-color: var(--bg-color); 
+    background-color: var(--bg-color);
     color: var(--secondary-color);
 }
 
-body,
+/* body,
 .App,
 .header,
 .header button,
 .footer,
 ul {
-    transition: background-color 0.15s ease, color 0.15s ease;
-}
+    transition: background-color 0.15s ease, color 0.15s ease; 
+} */
 
 ::-webkit-scrollbar {
     width: 12px;

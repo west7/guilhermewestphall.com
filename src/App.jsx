@@ -5,15 +5,24 @@ import { Section } from "./components/section";
 import './index.css';
 
 export default function App() {
-    const [dark, setDark] = useState(true);
+    const [dark, setDark] = useState(() => {
+        const savedTheme = localStorage.getItem('dark-theme');
+        return savedTheme ? JSON.parse(savedTheme) : false;
+    });
 
     const handleDark = () => {
-        setDark(!dark);
+        setDark(prevDark => {
+            const newDark = !prevDark;
+            localStorage.setItem('dark-theme', JSON.stringify(newDark));
+            return newDark;
+        });
     }
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
     }, [dark]);
+
+    
 
     return (
         <div className="App" >
