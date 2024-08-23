@@ -1,10 +1,16 @@
 .App {
     height: 100%;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     background-color: var(--bg-color);
     color: var(--secondary-color);
+    margin-bottom: 60px;
+}
+
+.main-content {
+    flex: 1;
 }
 
 .header {
@@ -47,7 +53,6 @@
 }
 
 .section {
-    flex: 1;
     display: flex;
     padding: 8px;
     margin-left: auto;
@@ -81,6 +86,20 @@
     padding-inline-start: 0%;
 }
 
+.section-link {
+    font-size: 20px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    margin-left: 0px;
+    text-decoration: none;
+}
+
+.section-link:hover {
+    color: var(--color-primary-light);
+    text-decoration: underline dashed;
+    cursor: pointer;
+}
+
 .div-header {
     padding: 4;
     flex-direction: row;
@@ -92,15 +111,33 @@
     max-width: 44%;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
     justify-content: space-between;
-    padding: 8px;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.post {
+    flex: 1;
+    width: 100%;
+    max-width: 44%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0;
-    margin-top: auto;
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+}
+
+.post h1 {
+    color: var(--color-primary);
+    padding-bottom: 12px 0;
+}
+
+.post p {
+    margin: 16px 0;
+}
+
+.go-back {
+    cursor: pointer;
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+    margin-bottom: 8px;
 }

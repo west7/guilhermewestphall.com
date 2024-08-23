@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Header } from "./components/header";
-import { Footer } from "./components/footer";
-import { Section } from "./components/section";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { Section } from "./components/Section";
 import './index.css';
+import { Post } from "./components/Post";
 
 export default function App() {
     const [dark, setDark] = useState(() => {
@@ -22,15 +24,18 @@ export default function App() {
         document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
     }, [dark]);
 
-    
+
 
     return (
-        <div className="App" >
-            <Header handleDark={handleDark} />
-            <Section title='Articles' />
-            <Section title='Projects' />
-            <Section title='Annotations' />
-            <Footer />
-        </div>
+        <Router >
+            <div className="App" >
+                <Header handleDark={handleDark} />
+                <Routes className="main-content">
+                    <Route path="/" element={<Section name="Annotations" /> } />
+                    <Route path="posts/:title" element={<Post />} />
+                </Routes>
+                <Footer />
+            </div>
+        </Router>
     );
 }

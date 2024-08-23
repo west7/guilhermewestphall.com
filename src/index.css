@@ -4,7 +4,7 @@
 }
 
 :root {
-    --bg-color: #fff;
+    --bg-color: #f9f9ed;
     --color-primary: #6A26C9;
     --color-primary-dark: #441a80;
     --color-primary-light: #8c00ff;
@@ -20,7 +20,7 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--bg-color); 
     color: var(--secondary-color);
 }
 

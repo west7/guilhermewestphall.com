@@ -1,22 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
-import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';
+import { Link } from "react-router-dom";
 
 export function Section(props) {
     const [posts, setPosts] = useState('');
     const [title, setTitle] = useState('');
-
-
-    /* useEffect(() => {
-        fetch(HASH)
-            .then(response => response.text())
-            .then((post) => {
-                setPosts(post);
-            })
-
-        console.log(posts);
-    }, []); */
 
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/west7/EDA2/main/docs/apostila/Quickselect.md') 
@@ -34,11 +22,11 @@ export function Section(props) {
 
     return (
         <div className="section">
-            <h2>{props.title}</h2>
+            <h2>{props.name}</h2>
             <ul>
                 <li>
-                    {title}
-                </li>
+                    <Link className="section-link" to={`/posts/${title}`}> {title} </Link>
+                </li>   
             </ul>
         </div>
     );
