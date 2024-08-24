@@ -25,21 +25,32 @@ export default function App() {
     }, [dark]);
 
     const urls = [
+        'https://raw.githubusercontent.com/west7/EDA2/main/docs/apostila/HashTable.md',
+        'https://raw.githubusercontent.com/west7/EDA2/main/docs/apostila/%C3%81rvoreRedBlack.md',
+        'https://raw.githubusercontent.com/west7/EDA2/main/docs/apostila/FiladePrioridades.md',
+        'https://raw.githubusercontent.com/west7/EDA2/main/docs/apostila/Grafos.md',
         'https://raw.githubusercontent.com/west7/EDA2/main/docs/apostila/Quickselect.md',
-        'https://raw.githubusercontent.com/west7/EDA2/main/docs/apostila/Grafos.md'
+    ]
+
+    const titles = [
+        'Hash Table',
+        'Árvore Red-Black',
+        'Fila de Prioridades',
+        'Grafos',
+        '',
     ]
 
     // TODO: Criar componente Home para configurar todas as Sections visíveis na tela inicial
-    //       Passar as URLs ou Paths como argumento para cada Section
     //       Realizar rederização dinâmica das Sections e vincular a cada Post
     //       Agrupar Posts?   
+    //       Colocar as urls em um arquivo de config JSON
 
     return (
         <Router >
             <div className="App" >
                 <Header handleDark={handleDark} />
                 <Routes className="main-content">
-                    <Route path="/" element={<Section name="Annotations" urls={urls}/> /*Home*/} />
+                    <Route path="/" element={<Section name="Notes" urls={urls} titles={titles}/> /*Home*/} />
                     <Route path="posts/:title" element={<Post />} />
                 </Routes>
                 <Footer />

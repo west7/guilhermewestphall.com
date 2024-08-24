@@ -5,19 +5,23 @@
 
 :root {
     --bg-color: #f9f9ed;
-    --color-primary: #6A26C9;
-    --color-primary-dark: #441a80;
-    --color-primary-light: #8c00ff;
+    --bg-color-light: #ccc6c6;
+    --color-primary: #f53900;
+    --color-primary-dark: #f01000;
+    --color-primary-light: #f55a00;
     --secondary-color: #171717;
+    --alt-color: #735CDD;
 }
 
 :root[data-theme="dark"] { 
     --bg-color: #0f0f0f;
+    --bg-color-light: #202020;
     --secondary-color: #f0f0f0;
     --color-primary: #6A26C9;
     --color-primary-dark: #441a80;
     --color-primary-light: #8c00ff;
     --color-primary-lighter: #CC00FF;
+    --alt-color: #FE9920;
 }
 
 body {
@@ -47,7 +51,7 @@ ul {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-prymary-dark);
+    background: var(--color-primary-dark);
 }
 
 

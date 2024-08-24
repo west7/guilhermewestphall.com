@@ -4,7 +4,7 @@ import { useParams, useLocation } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import "../App.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula, materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { materialDark, oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from 'remark-gfm';
 import rehypeSanitize from "rehype-sanitize";
@@ -28,7 +28,7 @@ export function Post() {
                         } */
                         return !inline && match ? (
                             <SyntaxHighlighter
-                                style={materialDark}
+                                style={oneDark}
                                 language={match[1].toLowerCase()}
                                 PreTag="div"
                                 {...props}

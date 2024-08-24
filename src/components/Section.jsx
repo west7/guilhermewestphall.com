@@ -2,18 +2,19 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 
-export function Section({ name, urls }) {
+export function Section({ name, urls, titles }) {
     const [posts, setPosts] = useState([]);
 
 
     useEffect(() => {
         const fetchPosts = async () => {
             const fetchedPosts = await Promise.all(
-                urls.map(async (url) => {
+                urls.map(async (url, index) => {
                     const response = await fetch(url);
-                    const text = await response.text();
-                    const title = text.match(/^# (.*$)/m)[1];
-                    return { title, url, content: text };
+                    const content = await response.text();
+                    const titleMatch = content.match(/^# (.*$)/m);
+                    const title = titles[index] || (titleMatch ? titleMatch[1] : "Sem título");
+                    return { title, url, content };
                 })
             );
             setPosts(fetchedPosts);
