@@ -1,33 +1,31 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React from "react";
+import { BackButton } from "./BackButton";
+import { useParams, useLocation } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import "../App.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula, materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import rehypeRaw from "rehype-raw";
-import { BackButton } from "./BackButton";
+import remarkGfm from 'remark-gfm';
+import rehypeSanitize from "rehype-sanitize";
+import Mermaid from "./Mermaid";
 
 export function Post() {
-    const { title } = useParams();
-    const [content, setContent] = useState('');
-
-    useEffect(() => {
-        fetch(`https://raw.githubusercontent.com/west7/EDA2/main/docs/apostila/${title}.md`) //${title}
-            .then(response => response.text())
-            .then((post) => {
-                setContent(post);
-            })
-            .catch(error => console.error('Erro ao buscar o arquivo Markdown:', error));
-    }, [title]);
+    const location = useLocation();
+    const { markdownContent } = location.state || {markdownContent: ''};
 
     return (
         <div className="post">
             <BackButton></BackButton>
             <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeRaw]}
                 components={{
                     code({ node, inline, className, children, ...props }) {
                         const match = /language-(\w+)/.exec(className || '');
+                        /* if (!inline && match && match[1] ==='mermaid' ) {
+                            return <Mermaid chart={String(children).replace(/\n$/, '')} />;
+                        } */
                         return !inline && match ? (
                             <SyntaxHighlighter
                                 style={materialDark}
@@ -42,9 +40,16 @@ export function Post() {
                                 {children}
                             </code>
                         );
+                    }, 
+                    table({node, ...props}) {
+                        return (
+                            <table className="markdown-table" {...props} />
+                        );
                     }
                 }}
-            >{content}</ReactMarkdown>
+            >
+                {markdownContent}
+            </ReactMarkdown>
         </div>
     );
 }

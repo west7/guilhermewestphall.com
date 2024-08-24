@@ -124,11 +124,33 @@
     max-width: 44%;
     margin-left: auto;
     margin-right: auto;
+    word-wrap: break-word;
+}
+
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+    padding: 10px 0;
 }
 
 .post h1 {
     color: var(--color-primary);
-    padding-bottom: 12px 0;
+}
+
+.post a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.post a:hover {
+    color: var(--color-primary-light);
+}
+
+.post li::marker {
+    color: var(--color-primary);
 }
 
 .post p {
@@ -139,5 +161,24 @@
     cursor: pointer;
     color: var(--secondary-color);
     background-color: var(--bg-color);
-    margin-bottom: 8px;
+}
+
+.go-back:hover {
+    filter: brightness(140%);
+}
+
+.markdown-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 18px 0;
+}
+
+.markdown-table th,
+.markdown-table td {
+    border: 1px solid var(--secondary-color);
+    padding: 8px;
+}
+
+.markdown-table th {
+    background-color: var(--color-primary-dark);
 }

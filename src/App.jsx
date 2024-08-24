@@ -24,6 +24,11 @@ export default function App() {
         document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
     }, [dark]);
 
+    const urls = [
+        'https://raw.githubusercontent.com/west7/EDA2/main/docs/apostila/Quickselect.md',
+        'https://raw.githubusercontent.com/west7/EDA2/main/docs/apostila/Grafos.md'
+    ]
+
     // TODO: Criar componente Home para configurar todas as Sections visíveis na tela inicial
     //       Passar as URLs ou Paths como argumento para cada Section
     //       Realizar rederização dinâmica das Sections e vincular a cada Post
@@ -34,7 +39,7 @@ export default function App() {
             <div className="App" >
                 <Header handleDark={handleDark} />
                 <Routes className="main-content">
-                    <Route path="/" element={<Section name="Annotations" /> } />    
+                    <Route path="/" element={<Section name="Annotations" urls={urls}/> /*Home*/} />
                     <Route path="posts/:title" element={<Post />} />
                 </Routes>
                 <Footer />
