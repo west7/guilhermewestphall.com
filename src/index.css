@@ -6,9 +6,9 @@
 :root {
     --bg-color: #f9f9ed;
     --bg-color-light: #ccc6c6;
-    --color-primary: #f53900;
+    --color-primary: #ff5e00;
     --color-primary-dark: #f01000;
-    --color-primary-light: #f55a00;
+    --color-primary-light: #ff7900;
     --secondary-color: #171717;
     --alt-color: #735CDD;
 }
@@ -21,7 +21,7 @@
     --color-primary-dark: #441a80;
     --color-primary-light: #8c00ff;
     --color-primary-lighter: #CC00FF;
-    --alt-color: #FE9920;
+    --alt-color: #FD5200;
 }
 
 body {

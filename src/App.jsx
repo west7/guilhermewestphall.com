@@ -50,7 +50,7 @@ export default function App() {
             <div className="App" >
                 <Header handleDark={handleDark} />
                 <Routes className="main-content">
-                    <Route path="/" element={<Section name="Notes" urls={urls} titles={titles}/> /*Home*/} />
+                    <Route path="/" element={<Section name="Software Engineering" urls={urls} titles={titles}/> /*Home*/} />
                     <Route path="posts/:title" element={<Post />} />
                 </Routes>
                 <Footer />

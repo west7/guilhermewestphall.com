@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
 
 
 export function BackButton() {
@@ -11,8 +12,9 @@ export function BackButton() {
 
     return (
         <button className="go-back" onClick={handleGoBack}>
-            {"< Go back"}
+            <IoIosArrowBack style={{alignSelf: 'center', paddingRight: 5}}/>
+            Go back
         </button>
 
     );
-}
+}   

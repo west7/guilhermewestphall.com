@@ -9,10 +9,12 @@ import rehypeRaw from "rehype-raw";
 import remarkGfm from 'remark-gfm';
 import rehypeSanitize from "rehype-sanitize";
 import Mermaid from "./Mermaid";
+import { TopButton } from "./TopButton";
 
 export function Post() {
     const location = useLocation();
     const { markdownContent } = location.state || {markdownContent: ''};
+    
 
     return (
         <div className="post">
@@ -50,6 +52,7 @@ export function Post() {
             >
                 {markdownContent}
             </ReactMarkdown>
+            <TopButton />
         </div>
     );
 }

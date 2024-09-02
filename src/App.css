@@ -151,6 +151,11 @@
     color: var(--color-primary);
 }
 
+.post ul {
+    padding: 10px;
+    margin-left: 20px;
+}
+
 .post p {
     margin: 16px 0;
 }
@@ -173,6 +178,8 @@
     cursor: pointer;
     color: var(--secondary-color);
     background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
 }
 
 .go-back:hover {
