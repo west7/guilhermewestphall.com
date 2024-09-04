@@ -186,6 +186,19 @@
     filter: brightness(120%);
 }
 
+.go-top {
+    cursor: pointer;
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.go-top:hover {
+    filter: brightness(120%);
+}
+
 .markdown-table {
     border-collapse: collapse;
     width: 100%;
@@ -200,4 +213,10 @@
 
 .markdown-table th {
     background-color: var(--color-primary-dark);
+}
+
+.mermaid {
+    padding: 15px;
+    background-color: var(--bg-color-light);
+    margin: 5px 0;
 }

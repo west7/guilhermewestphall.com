@@ -10,7 +10,7 @@ export function TopButton() {
     }
 
     return (
-        <button className="go-back" onClick={handleGoTop}>
+        <button className="go-top" onClick={handleGoTop}>
             <IoIosArrowUp style={{paddingRight: 5}}/>
             Go to top
         </button>

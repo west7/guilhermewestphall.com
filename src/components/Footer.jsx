@@ -5,12 +5,11 @@ import '../App.css';
 export function Footer() {
     return (
         <footer className='footer'>
-            Some text
             <div>
-                <button className="icon" style={{padding: 0}}>
+                <button className="icon" style={{ padding: 0 }}>
                     <FiGithub size={26} />
                 </button>
-                <button className="icon" style={{padding: 0}}>
+                <button className="icon" style={{ padding: 0 }}>
                     <TbBrandLinkedin size={26} />
                 </button>
             </div>
